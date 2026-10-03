@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 760" role="img" aria-label="Four English screen concepts for Words and Pause">
+  <defs>
+    <style>
+      text{font-family:Arial,Helvetica,sans-serif;fill:#243C43} .label{font-size:17px;font-weight:700} .top{font-size:13px;font-weight:700} .back{font-size:19px;font-weight:700;fill:#275B61} .adult{fill:#275B61} .title{font-size:28px;font-weight:700} .hint{font-size:15px} .card{font-size:22px;font-weight:700} .small{font-size:12px} .phrase{font-size:23px;font-weight:700}
+    </style>
+    <g id="phone">
+      <rect width="292" height="620" rx="34" fill="#243C43"/>
+      <rect x="7" y="7" width="278" height="606" rx="28" fill="#F7F6F0"/>
+      <text x="25" y="37" class="small">9:41</text>
+      <circle cx="249" cy="30" r="3" fill="#243C43"/><circle cx="258" cy="30" r="3" fill="#243C43"/><rect x="266" y="27" width="10" height="6" rx="2" fill="#243C43"/>
+    </g>
+    <g id="speech">
+      <rect width="29" height="22" rx="11" fill="#275B61"/><path d="M6 20 4 29 15 22" fill="#275B61"/>
+    </g>
+    <g id="rest">
+      <circle cx="15" cy="15" r="13" fill="none" stroke="#275B61" stroke-width="3"/><circle cx="15" cy="15" r="4" fill="#275B61"/>
+    </g>
+    <g id="wordNo" fill="none" stroke="#275B61" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M7 5h22q4 0 4 4v15q0 4-4 4H19l-7 5 1-5H7q-4 0-4-4V9q0-4 4-4Z"/><path d="M12 17h12"/></g>
+    <g id="wordStop" fill="none" stroke="#275B61" stroke-width="2.5" stroke-linejoin="round"><path d="M12 3h12l9 9v12l-9 9H12l-9-9V12Z"/><path d="M18 12v12" stroke-width="4"/></g>
+    <g id="wordHelp"><circle cx="13" cy="15" r="11" fill="#275B61"/><circle cx="23" cy="20" r="11" fill="#F6E4D5" stroke="#275B61" stroke-width="2.5"/></g>
+    <g id="wordBreak" fill="none" stroke="#275B61" stroke-width="2.5"><circle cx="18" cy="18" r="15"/><path d="M14 11v14M22 11v14" stroke-width="4"/></g>
+  </defs>
+  <rect width="1300" height="760" fill="#EDF1EC"/>
+  <text x="24" y="40" font-size="29" font-weight="700">Words &amp; Pause</text>
+  <text x="25" y="71" font-size="15" fill="#52676C">Your words, your pace. · Device language by default</text>
+
+  <g transform="translate(24 115)">
+    <text x="3" y="-12" class="label">01 · Home</text><use href="#phone"/>
+    <text x="25" y="76" class="top">Words &amp; Pause</text>
+    <text x="205" y="76" class="top adult">For adults</text>
+    <text x="25" y="138" class="title">What would help?</text>
+    <text x="25" y="169" class="hint">Choose together.</text>
+    <rect x="22" y="197" width="248" height="145" rx="23" fill="#D9EEE5"/>
+    <use href="#speech" x="42" y="215"/>
+    <text x="42" y="288" class="card">Practise my words</text>
+    <text x="42" y="315" class="small">Try useful words when you feel ready.</text>
+    <rect x="22" y="357" width="248" height="145" rx="23" fill="#F6E4D5"/>
+    <use href="#rest" x="42" y="374"/>
+    <text x="42" y="448" class="card">I need help now</text>
+    <text x="42" y="475" class="small">Find words or take a quiet moment.</text>
+  </g>
+
+  <g transform="translate(344 115)">
+    <text x="3" y="-12" class="label">02 · Help choice</text><use href="#phone"/>
+    <text x="25" y="76" class="back">‹ Back</text>
+    <text x="25" y="138" class="title">What do you</text><text x="25" y="171" class="title">need?</text>
+    <rect x="22" y="217" width="248" height="150" rx="23" fill="#D9EEE5"/>
+    <use href="#speech" x="42" y="235"/>
+    <text x="42" y="318" class="card">I want to say</text><text x="42" y="346" class="card">something</text>
+    <rect x="22" y="383" width="248" height="150" rx="23" fill="#DEEAF2"/>
+    <use href="#rest" x="42" y="399"/>
+    <text x="42" y="482" class="card">I want to</text><text x="42" y="510" class="card">calm down</text>
+  </g>
+
+  <g transform="translate(664 115)">
+    <text x="3" y="-12" class="label">03 · My words</text><use href="#phone"/>
+    <text x="25" y="76" class="back">‹ Back</text>
+    <text x="25" y="136" class="title">My words</text>
+    <text x="25" y="166" class="hint">Tap a card to hear it.</text>
+    <text x="25" y="187" class="hint">You can say it too.</text>
+    <rect x="22" y="214" width="248" height="74" rx="20" fill="#D9EEE5"/><text x="42" y="260" class="phrase">No</text><use href="#wordNo" x="228" y="233"/>
+    <rect x="22" y="299" width="248" height="74" rx="20" fill="#DEEAF2"/><text x="42" y="345" class="phrase">Stop</text><use href="#wordStop" x="228" y="318"/>
+    <rect x="22" y="384" width="248" height="74" rx="20" fill="#F6E4D5"/><text x="42" y="430" class="phrase">Help</text><use href="#wordHelp" x="228" y="403"/>
+    <rect x="22" y="469" width="248" height="82" rx="20" fill="#EAE3F1"/><text x="42" y="519" class="phrase">I need a break</text><use href="#wordBreak" x="228" y="492"/>
+  </g>
+
+  <g transform="translate(984 115)">
+    <text x="3" y="-12" class="label">04 · Balloon</text><use href="#phone"/>
+    <text x="25" y="76" class="back">‹ Back</text>
+    <text x="25" y="136" class="title">Balloon</text>
+    <text x="25" y="166" class="hint">Tap the balloon. Breathe</text>
+    <text x="25" y="187" class="hint">together at your own pace.</text>
+    <circle cx="146" cy="351" r="112" fill="#AED6D0"/>
+    <ellipse cx="107" cy="299" rx="37" ry="17" fill="#FFFFFF44" transform="rotate(-26 107 299)"/>
+    <text x="146" y="349" class="card" text-anchor="middle">Let it grow</text>
+    <text x="146" y="540" class="small" text-anchor="middle">You can leave whenever you want.</text>
+  </g>
+</svg>

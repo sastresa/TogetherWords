@@ -1,0 +1,24 @@
+name: Android
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: gradle
+      - uses: android-actions/setup-android@v4
+      - name: Install Android SDK platform
+        run: sdkmanager "platforms;android-36" "build-tools;36.0.0"
+      - name: Check formatting, build, test, and lint
+        run: ./gradlew spotlessCheck :app:assembleDebug :app:testDebugUnitTest :app:lintDebug --no-daemon --console=plain

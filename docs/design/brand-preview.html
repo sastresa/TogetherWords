@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Words &amp; Pause — brand preview</title>
+  <style>
+    :root { --canvas:#F7F6F0; --ink:#243C43; --teal:#275B61; --mint:#D9EEE5; --peach:#F6E4D5; --mist:#DEEAF2; --lavender:#EAE3F1; --line:#D9DFDC; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#EDF1EC; color:var(--ink); font-family:ui-rounded, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    button { font:inherit; }
+    .page { max-width:1440px; margin:0 auto; padding:36px 32px 80px; }
+    .top { display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand-lockup { display:flex; align-items:center; gap:14px; font-size:17px; font-weight:750; letter-spacing:-.02em; }
+    .brand-lockup img { width:52px; height:52px; border-radius:15px; }
+    .language-switch { display:flex; gap:4px; padding:4px; border:1px solid var(--line); border-radius:16px; background:#fff; }
+    .language-switch button { min-height:44px; padding:0 16px; border:0; border-radius:12px; background:transparent; color:var(--ink); font-size:14px; font-weight:700; }
+    .language-switch button[aria-pressed="true"] { background:var(--teal); color:#fff; }
+    .hero { padding:70px 0 46px; max-width:800px; }
+    .eyebrow { font-size:12px; font-weight:800; letter-spacing:.15em; text-transform:uppercase; color:var(--teal); }
+    h1 { font-size:clamp(40px,5.5vw,78px); line-height:1.04; letter-spacing:-.055em; margin:18px 0; font-weight:760; }
+    .hero p { font-size:21px; line-height:1.45; margin:0; max-width:600px; }
+    h2 { font-size:25px; letter-spacing:-.035em; margin:0 0 22px; }
+    .section { margin-top:32px; padding:30px; border-radius:28px; background:#fff; }
+    .identity-grid { display:grid; grid-template-columns:1.1fr .85fr 1.25fr; gap:26px; align-items:stretch; }
+    .asset { min-height:225px; border-radius:22px; background:var(--canvas); display:flex; flex-direction:column; justify-content:center; align-items:center; gap:16px; padding:24px; }
+    .asset small { font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:#52676C; text-align:center; }
+    .icon-large { width:144px; height:144px; border-radius:32px; box-shadow:0 10px 24px #23434A19; }
+    .icon-row { display:flex; align-items:center; gap:22px; }
+    .icon-small { width:48px; height:48px; border-radius:12px; }
+    .mono-disc { width:48px; height:48px; padding:5px; display:grid; place-items:center; border-radius:12px; background:#E6E8E6; }
+    .mono-disc img { width:38px; height:38px; }
+    .palette { display:flex; flex-direction:column; justify-content:center; gap:12px; }
+    .swatch { display:flex; align-items:center; gap:11px; font-size:13px; font-weight:650; }
+    .swatch i { display:block; width:32px; height:32px; border:1px solid #00000012; border-radius:9px; flex:none; }
+    .swatch code { margin-left:auto; color:#5F7275; font-size:12px; }
+    .launch { width:138px; height:300px; display:grid; place-items:center; overflow:hidden; background:#EAF3ED; border:7px solid var(--ink); border-radius:24px; }
+    .launch img { width:100%; height:100%; }
+    .screens { display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:22px; }
+    .screen-unit h3 { margin:0 0 13px 4px; font-size:14px; font-weight:800; color:#496267; }
+    .phone { height:620px; overflow:hidden; border:7px solid var(--ink); border-radius:34px; background:var(--canvas); box-shadow:0 16px 35px #233C4316; }
+    .phone-inner { height:100%; padding:16px 18px 20px; overflow:auto; }
+    .system-line { display:flex; justify-content:space-between; align-items:center; height:24px; color:var(--ink); font-size:11px; font-weight:800; }
+    .system-dots { display:flex; align-items:center; gap:3px; }
+    .system-dots span { display:block; width:5px; height:5px; border-radius:50%; background:var(--ink); }
+    .system-dots span:last-child { width:11px; height:6px; border-radius:2px; }
+    .appbar { display:flex; justify-content:space-between; align-items:center; gap:6px; margin:17px 0 30px; min-height:32px; }
+    .appbar-title { font-size:13px; font-weight:800; letter-spacing:-.015em; }
+    .appbar-back { font-size:19px; font-weight:750; color:var(--teal); }
+    .adult-link { display:flex; align-items:center; min-height:44px; color:var(--teal); font-size:12px; font-weight:750; }
+    .phone h4 { margin:0 0 10px; font-size:29px; line-height:1.08; letter-spacing:-.045em; font-weight:750; }
+    .phone .hint { margin:0 0 22px; font-size:15px; line-height:1.35; }
+    .choice { min-height:134px; margin:0 0 15px; padding:19px; border-radius:24px; display:flex; flex-direction:column; justify-content:space-between; }
+    .choice strong { display:block; font-size:21px; line-height:1.16; letter-spacing:-.025em; }
+    .choice small { display:block; margin-top:5px; font-size:12px; line-height:1.28; }
+    .choice.mint { background:var(--mint); }
+    .choice.peach { background:var(--peach); }
+    .choice.mist { background:var(--mist); }
+    .symbol { width:29px; height:29px; position:relative; }
+    .symbol.speech:before { content:""; position:absolute; inset:3px 2px 6px; background:var(--teal); border-radius:13px; }
+    .symbol.speech:after { content:""; position:absolute; left:6px; bottom:1px; border:7px solid transparent; border-top-color:var(--teal); transform:rotate(24deg); }
+    .symbol.pause:before { content:""; position:absolute; inset:2px; border:3px solid var(--teal); border-radius:50%; }
+    .symbol.pause:after { content:""; position:absolute; width:7px; height:7px; left:11px; top:11px; background:var(--teal); border-radius:50%; }
+    .help-choice { min-height:150px; }
+    .phrase { min-height:80px; margin-bottom:11px; padding:0 18px; border-radius:22px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:21px; font-weight:700; line-height:1.15; letter-spacing:-.025em; }
+    .phrase.mint { background:var(--mint); }
+    .phrase.mist { background:var(--mist); }
+    .phrase.peach { background:var(--peach); }
+    .phrase.lavender { background:var(--lavender); }
+    .phrase svg { width:30px; height:30px; flex:none; fill:none; stroke:var(--teal); stroke-width:2.5; stroke-linejoin:round; stroke-linecap:round; }
+    .help-spacer { height:36px; }
+    .phrase-note { font-size:12px; line-height:1.35; color:#4C666A; margin:12px 0 0; }
+    .balloon-wrap { display:flex; align-items:center; justify-content:center; height:335px; }
+    .balloon { width:238px; height:238px; border-radius:50%; background:#AED6D0; display:grid; place-items:center; position:relative; box-shadow:inset -16px -12px 0 #7EB8B027; }
+    .balloon:before { content:""; position:absolute; width:72px; height:34px; top:31px; left:48px; border-radius:50%; background:#FFFFFF44; transform:rotate(-28deg); }
+    .balloon span { z-index:1; max-width:145px; font-size:22px; line-height:1.12; font-weight:720; text-align:center; }
+    .footer-note { color:#4C666A; text-align:center; font-size:12px; }
+    .adult-preview { display:flex; gap:34px; align-items:flex-start; flex-wrap:wrap; }
+    .adult-preview .phone { width:320px; flex:none; }
+    .adult-preview img { display:block; width:100%; height:auto; }
+    .adult-copy { max-width:560px; font-size:17px; line-height:1.5; }
+    .adult-copy a { color:var(--teal); font-weight:700; }
+    @media (max-width:1160px) { .screens { grid-template-columns:repeat(2, minmax(0,1fr)); } .phone { max-width:320px; } }
+    @media (max-width:760px) { .page { padding:22px 14px 50px; } .hero { padding:48px 4px 30px; } .hero p { font-size:18px; } .section { padding:20px 14px; } .identity-grid { grid-template-columns:1fr; } .screens { grid-template-columns:1fr; } .phone { width:100%; max-width:350px; margin:auto; } .screen-unit h3 { text-align:center; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="top">
+      <div class="brand-lockup"><img src="icon-concept.svg" alt=""><span data-en="Words &amp; Pause" data-es="Palabras y pausa">Words &amp; Pause</span></div>
+      <div class="language-switch" role="group" aria-label="Preview language">
+        <button type="button" data-language="en" aria-pressed="true">English</button>
+        <button type="button" data-language="es" aria-pressed="false">Español</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow" data-en="Visual direction · 01" data-es="Dirección visual · 01">Visual direction · 01</div>
+      <h1 data-en="Your words, your pace." data-es="Tus palabras, a tu ritmo.">Your words, your pace.</h1>
+      <p data-en="A calm space for a child and adult to find words or take a pause together." data-es="Un espacio tranquilo para encontrar palabras o hacer una pausa en compañía.">A calm space for a child and adult to find words or take a pause together.</p>
+    </section>
+
+    <section class="section">
+      <h2 data-en="Identity &amp; launch" data-es="Identidad e inicio">Identity &amp; launch</h2>
+      <div class="identity-grid">
+        <div class="asset"><img class="icon-large" src="icon-concept.svg" alt="Peach word balloon on deep teal"><div class="icon-row"><img class="icon-small" src="icon-concept.svg" alt="Small icon"><div class="mono-disc"><img src="icon-monochrome.svg" alt="Monochrome icon"></div></div><small data-en="Launcher icon · color and themed" data-es="Icono · color y monocromo">Launcher icon · color and themed</small></div>
+        <div class="asset"><div class="launch"><img src="launch-concept.svg" alt="Large balloon mark centered on a soft green launch screen"></div><small data-en="System launch screen" data-es="Pantalla de inicio del sistema">System launch screen</small></div>
+        <div class="asset palette">
+          <div class="swatch"><i style="background:#F7F6F0"></i><span data-en="Warm canvas" data-es="Fondo cálido">Warm canvas</span><code>#F7F6F0</code></div>
+          <div class="swatch"><i style="background:#243C43"></i><span data-en="Ink" data-es="Tinta">Ink</span><code>#243C43</code></div>
+          <div class="swatch"><i style="background:#275B61"></i><span data-en="Deep teal" data-es="Verde azulado">Deep teal</span><code>#275B61</code></div>
+          <div class="swatch"><i style="background:#D9EEE5"></i><span data-en="Words" data-es="Palabras">Words</span><code>#D9EEE5</code></div>
+          <div class="swatch"><i style="background:#F6E4D5"></i><span data-en="Pause" data-es="Pausa">Pause</span><code>#F6E4D5</code></div>
+          <div class="swatch"><i style="background:#DEEAF2"></i><span data-en="Secondary" data-es="Secundario">Secondary</span><code>#DEEAF2</code></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 data-en="Four screen concepts" data-es="Cuatro pantallas">Four screen concepts</h2>
+      <p data-en="The app follows the device language. An adult can change it and find practical guidance from Home; the child-facing screens stay uncluttered." data-es="La app usa el idioma del móvil. Desde Inicio, un adulto puede cambiarlo y consultar consejos prácticos; las pantallas del niño quedan despejadas.">The app follows the device language. An adult can change it and find practical guidance from Home; the child-facing screens stay uncluttered.</p>
+      <div class="screens">
+        <div class="screen-unit">
+          <h3 data-en="01 · Home" data-es="01 · Inicio">01 · Home</h3>
+          <div class="phone"><div class="phone-inner" style="padding:0">
+            <img id="home-image" src="home-en.png" alt="Current Android home screen" style="display:block;width:100%;height:auto">
+          </div></div>
+        </div>
+        <div class="screen-unit">
+          <h3 data-en="02 · Help choice" data-es="02 · Pedir ayuda">02 · Help choice</h3>
+          <div class="phone"><div class="phone-inner">
+            <div class="system-line"><span>9:41</span><span class="system-dots" aria-hidden="true"><span></span><span></span><span></span></span></div>
+            <div class="appbar"><span class="appbar-back" data-en="‹ Back" data-es="‹ Volver">‹ Back</span></div>
+            <h4 data-en="What do you need?" data-es="¿Qué necesitas?">What do you need?</h4>
+            <div class="help-spacer" aria-hidden="true"></div>
+            <div class="choice mint help-choice"><span class="symbol speech" aria-hidden="true"></span><strong data-en="I want to say something" data-es="Quiero decir algo">I want to say something</strong></div>
+            <div class="choice mist help-choice"><span class="symbol pause" aria-hidden="true"></span><strong data-en="I want to calm down" data-es="Quiero calmarme">I want to calm down</strong></div>
+          </div></div>
+        </div>
+        <div class="screen-unit">
+          <h3 data-en="03 · My words" data-es="03 · Mis palabras">03 · My words</h3>
+          <div class="phone"><div class="phone-inner">
+            <div class="system-line"><span>9:41</span><span class="system-dots" aria-hidden="true"><span></span><span></span><span></span></span></div>
+            <div class="appbar"><span class="appbar-back" data-en="‹ Back" data-es="‹ Volver">‹ Back</span></div>
+            <h4 data-en="My words" data-es="Mis palabras">My words</h4>
+            <p class="hint" data-en="Tap a card to hear it. You can say it too." data-es="Toca una tarjeta para escucharla. También puedes decirla.">Tap a card to hear it. You can say it too.</p>
+            <div class="phrase mint"><span data-en="No" data-es="No">No</span><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M8 5h20q5 0 5 5v13q0 5-5 5h-9l-7 5 1-5H8q-5 0-5-5V10q0-5 5-5Z"/><path d="M12 17h12"/></svg></div>
+            <div class="phrase mist"><span data-en="Stop" data-es="Para">Stop</span><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M12 3h12l9 9v12l-9 9H12l-9-9V12Z"/><path d="M18 12v12" stroke-width="4"/></svg></div>
+            <div class="phrase peach"><span data-en="Help" data-es="Ayuda">Help</span><svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="13" cy="15" r="11" fill="var(--teal)"/><circle cx="23" cy="20" r="11" fill="var(--peach)"/></svg></div>
+            <div class="phrase lavender"><span data-en="I need a break" data-es="Necesito un descanso">I need a break</span><svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15"/><path d="M14 11v14M22 11v14" stroke-width="4"/></svg></div>
+            <p class="phrase-note" data-en="There is nothing to finish or get right." data-es="No hay nada que terminar ni que hacer perfecto.">There is nothing to finish or get right.</p>
+          </div></div>
+        </div>
+        <div class="screen-unit">
+          <h3 data-en="04 · Balloon" data-es="04 · Globo">04 · Balloon</h3>
+          <div class="phone"><div class="phone-inner">
+            <div class="system-line"><span>9:41</span><span class="system-dots" aria-hidden="true"><span></span><span></span><span></span></span></div>
+            <div class="appbar"><span class="appbar-back" data-en="‹ Back" data-es="‹ Volver">‹ Back</span></div>
+            <h4 data-en="Balloon" data-es="Globo">Balloon</h4>
+            <p class="hint" data-en="Tap the balloon. Breathe together at your own pace." data-es="Toca el globo. Respirad juntos a vuestro ritmo.">Tap the balloon. Breathe together at your own pace.</p>
+            <div class="balloon-wrap"><div class="balloon"><span data-en="Let it grow" data-es="Hazlo crecer">Let it grow</span></div></div>
+            <p class="footer-note" data-en="You can leave whenever you want." data-es="Podéis salir cuando queráis.">You can leave whenever you want.</p>
+          </div></div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <h2 data-en="For adults" data-es="Para adultos">For adults</h2>
+      <div class="adult-preview">
+        <div class="phone"><div class="phone-inner" style="padding:0"><img id="adult-image" src="parent-guide-en.svg" alt="For adults screen concept"></div></div>
+        <div class="adult-copy">
+          <p data-en="A quiet page reached from Home brings together the language setting and practical guidance on tantrums. It suggests what to try before, during, and after a difficult moment, while keeping safety and the adult's presence first." data-es="Una página discreta desde Inicio reúne el ajuste de idioma y consejos prácticos sobre las rabietas. Propone qué hacer antes, durante y después de un momento difícil, priorizando la seguridad y la presencia del adulto.">A quiet page reached from Home brings together the language setting and practical guidance on tantrums. It suggests what to try before, during, and after a difficult moment, while keeping safety and the adult's presence first.</p>
+          <p><a href="parent-guide-content.md" data-en="Read the complete English and Spanish text" data-es="Leer el texto completo en español e inglés">Read the complete English and Spanish text</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script>
+    const buttons = document.querySelectorAll('[data-language]');
+    buttons.forEach(button => button.addEventListener('click', () => {
+      const code = button.dataset.language;
+      document.documentElement.lang = code;
+      document.querySelectorAll('[data-en][data-es]').forEach(element => { element.textContent = element.dataset[code]; });
+      document.getElementById('home-image').src = `home-${code}.png`;
+      document.getElementById('adult-image').src = `parent-guide-${code}.svg`;
+      buttons.forEach(item => item.setAttribute('aria-pressed', String(item.dataset.language === code)));
+    }));
+  </script>
+</body>
+</html>

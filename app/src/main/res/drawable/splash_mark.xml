@@ -1,0 +1,17 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="288dp" android:height="288dp"
+    android:viewportWidth="288" android:viewportHeight="288">
+    <!-- Keep the artwork inside the visible circle of the system splash. -->
+    <path android:fillColor="#F6E4D5"
+        android:pathData="M144,53c51,0 92,41 92,92s-41,92 -92,92 -92,-41 -92,-92 41,-92 92,-92Z"/>
+    <path android:fillColor="#275B61"
+        android:pathData="M143,76c37,0 65,27 65,62 0,30 -23,56 -55,60l-10,12 -10,-12c-32,-4 -55,-30 -55,-60 0,-35 28,-62 65,-62Z"/>
+    <path android:fillColor="#275B61"
+        android:pathData="M133,197l-7,16c10,-4 24,-4 34,0l-7,-16Z"/>
+    <path android:fillColor="@android:color/transparent" android:strokeColor="#275B61"
+        android:strokeWidth="4" android:strokeLineCap="round"
+        android:pathData="M143,211c-10,8 7,12 -1,21"/>
+    <path android:fillColor="@android:color/transparent" android:strokeColor="#D9EEE5"
+        android:strokeWidth="8" android:strokeLineCap="round"
+        android:pathData="M103,123c5,-12 15,-21 28,-24"/>
+</vector>

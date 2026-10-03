@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 780" role="img" aria-label="Soft green launch screen with a large balloon mark centered">
+  <rect width="360" height="780" fill="#EAF3ED"/>
+  <g transform="translate(36 246)">
+    <circle cx="144" cy="145" r="92" fill="#F6E4D5"/>
+    <path d="M143 76c37 0 65 27 65 62 0 30-23 56-55 60l-10 12-10-12c-32-4-55-30-55-60 0-35 28-62 65-62Z" fill="#275B61"/>
+    <path d="M133 197l-7 16c10-4 24-4 34 0l-7-16Z" fill="#275B61"/>
+    <path d="M143 211c-10 8 7 12-1 21" fill="none" stroke="#275B61" stroke-width="4" stroke-linecap="round"/>
+    <path d="M103 123c5-12 15-21 28-24" fill="none" stroke="#D9EEE5" stroke-width="8" stroke-linecap="round"/>
+  </g>
+</svg>
