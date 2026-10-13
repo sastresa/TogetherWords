@@ -46,6 +46,9 @@ while completing the forms.
 Create an **app** with English (United States) as the default listing and add a
 Spanish (Spain) translation. Copy the field values from
 [`listing/en-US.md`](listing/en-US.md) and [`listing/es-ES.md`](listing/es-ES.md).
+In Store settings, choose the **Education** app category: the child-facing core
+teaches useful phrases and a simple calming skill. The adult guidance supports
+that learning. Choose only tags that clearly match the app's actual experience.
 The marketing materials are:
 
 | Locale | Icon | Feature graphic | Phone screenshots, in order |
