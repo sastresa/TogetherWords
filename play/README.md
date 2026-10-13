@@ -7,9 +7,9 @@ app. Google Play package IDs are permanent after the first upload.
 
 ## 1. Complete the account decisions
 
-- Choose the target age group in Play Console based on the intended users. The
-  interface was designed for young children with an adult present. Complete the
-  Families declarations for any child age group selected.
+- Select **Aged 5 and under** as the target age group. The large controls,
+  simple spoken phrases, and adult-supported activities were designed for very
+  young children. Complete the Families declarations for this child audience.
 - Use `sastresa@gmail.com` as the public support email in Play Console. Google
   requires one and shows it on the store listing.
 - Decide which countries to offer the app in and whether it is free or paid.
@@ -32,7 +32,7 @@ dependencies. The current app:
 | Ads | None |
 | App access | All screens are accessible without an account |
 | Data safety | No developer server, analytics, ads, microphone permission, or audio recording. An adult's language choice is stored only on device on Android 12 and earlier. A tapped phrase is passed to the installed Android text-to-speech engine; review that engine's provider behavior when answering data-handling questions. |
-| Target audience | Intended for young children with an adult alongside them; select only the age groups deliberately served by the app. |
+| Target audience | Aged 5 and under, with an adult alongside the child. The adult guide does not make adults a separate target age group. |
 | Content rating | Answer the Play questionnaire from the actual app content. For “Is the app primarily a news or educational product?”, select **Yes**: its main purpose is to teach children useful phrases and offer practical guidance to adults. The app also has external source links in the adult section. |
 | Sensitive permissions | No internet, microphone, or other sensitive permission. AndroidX adds an internal `DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION` in the merged manifest; it does not grant access to personal data. Confirm the final merged manifest again before upload. |
 
