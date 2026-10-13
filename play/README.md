@@ -98,9 +98,20 @@ Complete the remaining dashboard forms and release notes from the localized
 listing files. The Play Console account owner must confirm final declarations
 and start the production rollout.
 
+For a closed or internal test, open the track's **Testers** tab, create or select
+an email list or Google Group, save it, and share the opt-in link. A release with
+no assigned testers cannot be installed by anyone. The first bundle may also
+show two optional diagnostic warnings: no deobfuscation mapping file (this
+version does not enable R8 obfuscation) and no native debug symbols (the native
+library is supplied by AndroidX). Neither warning means the upload failed.
+If a later release adds app-owned native code or enables obfuscation, configure
+and upload the matching symbols or mapping file for that **same version**.
+
 Official references:
 
 - [Create and set up an app](https://support.google.com/googleplay/android-developer/answer/9859152)
 - [Store graphics and screenshots](https://support.google.com/googleplay/android-developer/answer/9866151)
 - [Play App Signing](https://support.google.com/googleplay/android-developer/answer/9842756)
 - [Testing rules for new personal accounts](https://support.google.com/googleplay/android-developer/answer/14151465)
+- [Set up test tracks and testers](https://support.google.com/googleplay/android-developer/answer/9845334)
+- [Native debug symbols](https://developer.android.com/build/include-native-symbols)
