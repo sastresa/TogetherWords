@@ -47,6 +47,7 @@ class MainFlowTest {
         rule.onNodeWithTag("adult_before").assertExists()
         rule.onNodeWithTag("adult_during").assertExists()
         rule.onNodeWithTag("adult_after").assertExists()
+        rule.onNodeWithTag("privacy_policy").assertExists()
         rule.onNodeWithTag("language_selector").performClick()
         rule.onNodeWithTag("language_es").performClick()
         rule.onNodeWithText("Para adultos").assertExists()

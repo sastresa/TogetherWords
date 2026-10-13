@@ -1,0 +1,6 @@
+# Copy this file to play-upload.properties and keep it out of Git.
+# The path is relative to the project root.
+storeFile=.release/upload-key.jks
+storePassword=replace-with-a-strong-password
+keyAlias=words-and-pause-upload
+keyPassword=replace-with-a-strong-password

@@ -1,6 +1,20 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.plugin.compose")
+}
+
+val uploadPropertiesFile = rootProject.file("play-upload.properties")
+val uploadProperties = Properties()
+
+if (uploadPropertiesFile.isFile) {
+    uploadPropertiesFile.inputStream().use(uploadProperties::load)
+    listOf("storeFile", "storePassword", "keyAlias", "keyPassword").forEach { name ->
+        require(!uploadProperties.getProperty(name).isNullOrBlank()) {
+            "Missing $name in play-upload.properties"
+        }
+    }
 }
 
 android {
@@ -18,6 +32,27 @@ android {
 
     buildFeatures { compose = true }
 
+    androidResources { localeFilters += listOf("en", "es") }
+
+    signingConfigs {
+        if (uploadPropertiesFile.isFile) {
+            create("playUpload") {
+                storeFile = rootProject.file(uploadProperties.getProperty("storeFile"))
+                storePassword = uploadProperties.getProperty("storePassword")
+                keyAlias = uploadProperties.getProperty("keyAlias")
+                keyPassword = uploadProperties.getProperty("keyPassword")
+            }
+        }
+    }
+
+    buildTypes {
+        getByName("release") {
+            if (uploadPropertiesFile.isFile) {
+                signingConfig = signingConfigs.getByName("playUpload")
+            }
+        }
+    }
+
     bundle {
         language { enableSplit = false }
     }
@@ -27,6 +62,24 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 }
+
+val verifyPlayUploadSigning =
+    tasks.register("verifyPlayUploadSigning") {
+        doLast {
+            check(uploadPropertiesFile.isFile) {
+                "Create play-upload.properties from play-upload.properties.example before building a Play release."
+            }
+            check(rootProject.file(uploadProperties.getProperty("storeFile")).isFile) {
+                "The Play upload keystore listed in play-upload.properties does not exist."
+            }
+        }
+    }
+
+tasks
+    .matching { it.name == "bundleRelease" }
+    .configureEach {
+        dependsOn(verifyPlayUploadSigning)
+    }
 
 dependencies {
     implementation("androidx.core:core-ktx:1.18.0")

@@ -14,3 +14,5 @@ local.properties
 .env.*
 *.p12
 *.pfx
+.release/
+/play-upload.properties

@@ -48,6 +48,9 @@ private val guideSources =
             "https://www.healthychildren.org/English/family-life/power-of-play/Pages/pretend-play-ways-children-can-exercise-their-imagination.aspx",
     )
 
+private const val PRIVACY_POLICY_URL =
+    "https://github.com/sastresa/TogetherWords/blob/main/PRIVACY.md"
+
 @Composable
 internal fun AdultGuide(
     strings: StringResolver,
@@ -165,6 +168,17 @@ internal fun AdultGuide(
                 Text(label, color = Teal, fontSize = 14.sp, fontWeight = FontWeight.SemiBold)
             }
         }
+    }
+    TextButton(
+        onClick = { uriHandler.openUri(PRIVACY_POLICY_URL) },
+        modifier = Modifier.height(48.dp).testTag("privacy_policy"),
+    ) {
+        Text(
+            strings(R.string.privacy_policy),
+            color = Teal,
+            fontSize = 16.sp,
+            fontWeight = FontWeight.SemiBold,
+        )
     }
 }
 

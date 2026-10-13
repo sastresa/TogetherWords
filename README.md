@@ -58,4 +58,6 @@ The UI suite has been verified on a Pixel 9 Android 16 emulator. Espresso input 
 
 ## Privacy and scope
 
-The app requests no permissions and has no microphone use, audio recording, accounts, ads, notifications, or child data collection. On Android 12 and older, only the language choice is stored in local app preferences. The adult guide opens external source pages only when an adult taps a link.
+The app requests no sensitive or runtime permissions and has no microphone use, audio recording, accounts, ads, notifications, or child data collection. The release manifest includes an AndroidX internal permission for its non-exported broadcast receiver; it does not grant access to personal data. On Android 12 and older, only the language choice is stored in local app preferences. The adult guide opens external source pages only when an adult taps a link.
+
+Read the bilingual [privacy policy](PRIVACY.md) for details about Android's text-to-speech engine and external links. The [Google Play release kit](play/README.md) contains the localized listing, screenshots, graphics, signing instructions, and console checklist.
