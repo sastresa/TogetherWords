@@ -2,17 +2,16 @@
 
 This directory contains the first release's English and Spanish store text,
 graphics, and authentic emulator screenshots. The Android package ID is
-`com.togetherwords`; confirm that it matches the Play Console app **before the
-first upload**. Google Play package IDs are permanent.
+`com.togetherwords`, which the owner has confirmed matches the Play Console
+app. Google Play package IDs are permanent after the first upload.
 
 ## 1. Complete the account decisions
 
 - Choose the target age group in Play Console based on the intended users. The
   interface was designed for young children with an adult present. Complete the
   Families declarations for any child age group selected.
-- Provide a public support email in Play Console. Google requires one and shows
-  it on the store listing. The Git author email is not automatically the support
-  address.
+- Use `sastresa@gmail.com` as the public support email in Play Console. Google
+  requires one and shows it on the store listing.
 - Decide which countries to offer the app in and whether it is free or paid.
   There are no in-app purchases.
 - If this is a new personal developer account created after 13 November 2023,
@@ -22,8 +21,8 @@ first upload**. Google Play package IDs are permanent.
 
 Use `https://github.com/sastresa/TogetherWords/blob/main/PRIVACY.md` for the
 public privacy-policy URL. The same link is available inside **For adults**.
-Keep the policy public before submitting the app. Add the chosen support email
-to the policy if needed so users have a direct contact method.
+Keep the policy public before submitting the app. It includes the public support
+email for direct contact.
 
 Review each answer in the Play Console forms against the final app and its
 dependencies. The current app:
@@ -34,7 +33,7 @@ dependencies. The current app:
 | App access | All screens are accessible without an account |
 | Data safety | No developer server, analytics, ads, microphone permission, or audio recording. An adult's language choice is stored only on device on Android 12 and earlier. A tapped phrase is passed to the installed Android text-to-speech engine; review that engine's provider behavior when answering data-handling questions. |
 | Target audience | Intended for young children with an adult alongside them; select only the age groups deliberately served by the app. |
-| Content rating | Answer the Play questionnaire from the actual app content. The app has adult guidance about tantrums and external source links in the adult section. |
+| Content rating | Answer the Play questionnaire from the actual app content. For “Is the app primarily a news or educational product?”, select **Yes**: its main purpose is to teach children useful phrases and offer practical guidance to adults. The app also has external source links in the adult section. |
 | Sensitive permissions | No internet, microphone, or other sensitive permission. AndroidX adds an internal `DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION` in the merged manifest; it does not grant access to personal data. Confirm the final merged manifest again before upload. |
 
 The privacy policy and Data safety answers must stay consistent with future
